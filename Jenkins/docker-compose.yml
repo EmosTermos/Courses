@@ -3,12 +3,20 @@ services:
   jenkins:
     image: jenkins/jenkins
     container_name: jenkins-test
-    host_name: jenkins-test
+    hostname: jenkins-test
     ports: 
       - "8080:8080"
     volumes:
       - "./configs/jenkins-config:/var/jenkins_home"
     networks:
       - test-net
+  remote-host:
+    container_name: remote-host
+    image: remote-host
+    build: 
+      context: centos7
+    networks:
+      - test-net
+
 networks:
   test-net:
