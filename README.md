@@ -1,1 +1,1 @@
-# Jenkins-Course
+# Courses
